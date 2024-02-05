@@ -1,0 +1,13 @@
+(library
+ (name zimmerman)
+ (public_name zimmerman)
+ (modules route zimmerman)
+ (libraries cohttp cohttp-eio logs.fmt unix containers))
+
+(library
+ (name zimmerman_ppx)
+ (public_name zimmerman.ppx)
+ (modules ppx)
+ (libraries ppxlib zimmerman)
+ (kind ppx_rewriter)
+ (preprocess (pps ppxlib.metaquot)))

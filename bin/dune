@@ -1,0 +1,10 @@
+(executable
+ (name example)
+ (modules example)
+ (libraries zimmerman eio_main))
+
+(executable
+ (name example_ppx)
+ (modules example_ppx)
+ (libraries zimmerman zimmerman_ppx eio_main)
+ (preprocess (pps zimmerman_ppx)))
